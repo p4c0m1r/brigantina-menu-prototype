@@ -22,13 +22,9 @@ export default function LangSwitcher({ compact = false }: Props) {
           key={o.code}
           onClick={() => setLang(o.code)}
           title={o.label}
-          className={`flex items-center gap-1 rounded-lg font-bold transition-all ${
+          className={`flex items-center gap-1 font-bold transition-all ${
             compact ? 'px-1.5 py-1 text-sm' : 'px-2.5 py-1.5 text-xs'
-          } ${
-            lang === o.code
-              ? 'bg-[#c9a84c] text-[#0a1628]'
-              : 'text-[#8ab4d4] hover:bg-white/10'
-          }`}
+          } ${lang === o.code ? 'lang-active' : 'lang-inactive'}`}
         >
           <span>{o.flag}</span>
           {!compact && <span>{o.label}</span>}

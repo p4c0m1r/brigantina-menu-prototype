@@ -43,9 +43,10 @@ export default function AllergenIcon({ number, showLabel = false }: Props) {
       </span>
 
       {!showLabel && tooltip && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 bg-[#071020] border border-white/20 rounded text-white text-[10px] whitespace-nowrap z-30 pointer-events-none shadow-xl">
+        <div className="allergen-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 z-30">
           <span className="font-semibold">{number}.</span> {info.name}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#071020]" />
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent"
+            style={{ borderTopColor: 'var(--color-tooltip-bg)' }} />
         </div>
       )}
     </div>

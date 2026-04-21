@@ -1,5 +1,6 @@
 import type { MenuSection } from '../types/menu';
 import { useLang } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 import { getSectionTitle } from '../utils/lang';
 import LangSwitcher from './LangSwitcher';
 
@@ -11,9 +12,10 @@ interface Props {
 
 export default function NavBar({ sections, active, onSelect }: Props) {
   const { lang } = useLang();
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="sticky top-0 z-20 bg-[#0a1628] border-b border-[#c9a84c]/30 shadow-lg">
+    <nav className="nav-glass sticky top-0 z-20">
       <div className="flex items-stretch">
         {/* Scrollable section tabs */}
         <div className="flex-1 min-w-0 overflow-x-auto">
@@ -22,10 +24,8 @@ export default function NavBar({ sections, active, onSelect }: Props) {
               <button
                 key={s.id}
                 onClick={() => onSelect(s.id)}
-                className={`flex-shrink-0 flex flex-col items-center gap-0.5 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
-                  active === s.id
-                    ? 'bg-[#c9a84c] text-[#0a1628]'
-                    : 'text-[#8ab4d4] hover:bg-white/10'
+                className={`flex-shrink-0 flex flex-col items-center gap-0.5 px-3 py-2 text-xs font-medium ${
+                  active === s.id ? 'nav-tab-active' : 'nav-tab'
                 }`}
               >
                 <span className="text-lg">{s.emoji}</span>
@@ -35,8 +35,15 @@ export default function NavBar({ sections, active, onSelect }: Props) {
           </div>
         </div>
 
-        {/* Fixed language switcher */}
-        <div className="flex-shrink-0 flex items-center px-2 border-l border-[#c9a84c]/20">
+        {/* Theme toggle + language switcher */}
+        <div className="flex-shrink-0 flex items-center gap-1 px-2 border-l border-border-accent-20">
+          <button
+            onClick={toggleTheme}
+            title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+            className="px-1.5 py-1 rounded-lg text-base transition-all text-text-secondary hover:bg-surface-hover"
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
           <LangSwitcher compact />
         </div>
       </div>
