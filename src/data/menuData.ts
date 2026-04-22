@@ -25,7 +25,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Свежий салат, помидоры, куриные грудки, ароматный соус, оливки, пармезан',
         descriptionGr: 'Frischer Salat, Tomaten, Hühnerbrust, Croutons, aromatische Sauce, Oliven, Parmesan',
         price: '', badge: 'favorite', allergens: [1, 4, 5],
-        image: IMG('caesar,salad'),
+        image: IMG('9e7'),
       },
       {
         name: 'Шопска Салата',
