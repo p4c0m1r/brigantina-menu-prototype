@@ -172,6 +172,27 @@
     border-radius: 0.375rem 0.375rem 0 0;
   }
 
+  /* ── Mobile nav dropdown ───────────────────────────── */
+  .nav-dropdown {
+    background: var(--color-surface-card);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-accent-30);
+    border-radius: 0.5rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .nav-dropdown:focus {
+    border-color: var(--color-border-accent-60);
+    box-shadow: 0 0 0 2px rgba(212, 168, 67, 0.15);
+  }
+
+  .nav-dropdown option {
+    background: var(--color-ocean-900);
+    color: var(--color-text-primary);
+  }
+
   /* ── Section divider lines ──────────────────────────── */
   .section-divider-line {
     height: 1px;

@@ -17,8 +17,29 @@ export default function NavBar({ sections, active, onSelect }: Props) {
   return (
     <nav className="nav-glass sticky top-0 z-20">
       <div className="flex items-stretch">
-        {/* Scrollable section tabs */}
-        <div className="flex-1 min-w-0 overflow-x-auto">
+
+        {/* Mobile: styled dropdown */}
+        <div className="flex-1 min-w-0 flex items-center px-2 py-2 md:hidden">
+          <div className="relative flex-1">
+            <select
+              value={active}
+              onChange={(e) => onSelect(e.target.value)}
+              className="nav-dropdown w-full pl-3 pr-8 py-2 text-sm font-medium appearance-none cursor-pointer"
+            >
+              {sections.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.emoji} {getSectionTitle(s, lang)}
+                </option>
+              ))}
+            </select>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-accent text-xs">
+              ▾
+            </span>
+          </div>
+        </div>
+
+        {/* Desktop: scrollable section tabs */}
+        <div className="hidden md:flex flex-1 min-w-0 overflow-x-auto">
           <div className="flex gap-1 px-2 py-2">
             {sections.map((s) => (
               <button
