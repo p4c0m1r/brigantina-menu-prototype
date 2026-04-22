@@ -1,20 +1,20 @@
 import { useState } from 'react';
 
 export const allergenInfo: Record<number, { emoji: string; label: string; name: string; bg: string; border: string; color: string }> = {
-  1:  { emoji: '🌾', label: 'Gluten',    name: 'Cereals containing gluten',       bg: 'rgba(212,160,23,0.12)',  border: 'rgba(212,160,23,0.45)',  color: '#c9921a' },
-  2:  { emoji: '🌰', label: 'Nuts',      name: 'Tree nuts',                       bg: 'rgba(160,82,45,0.15)',   border: 'rgba(160,82,45,0.45)',   color: '#b07040' },
-  3:  { emoji: '🥜', label: 'Peanuts',   name: 'Peanuts',                         bg: 'rgba(193,127,62,0.12)', border: 'rgba(193,127,62,0.45)', color: '#b07030' },
-  4:  { emoji: '🥚', label: 'Eggs',      name: 'Eggs',                            bg: 'rgba(220,190,50,0.12)', border: 'rgba(220,190,50,0.45)', color: '#b09020' },
-  5:  { emoji: '🥛', label: 'Milk',      name: 'Milk & dairy products',           bg: 'rgba(150,180,220,0.12)', border: 'rgba(150,180,220,0.45)', color: '#7aA0c8' },
-  6:  { emoji: '🐟', label: 'Fish',      name: 'Fish',                            bg: 'rgba(60,120,180,0.12)', border: 'rgba(60,120,180,0.45)', color: '#4a90d0' },
-  7:  { emoji: '🦐', label: 'Crust.',    name: 'Crustaceans',                     bg: 'rgba(220,100,70,0.12)', border: 'rgba(220,100,70,0.45)', color: '#d06040' },
-  8:  { emoji: '🦑', label: 'Molluscs',  name: 'Molluscs',                        bg: 'rgba(140,100,210,0.12)',border: 'rgba(140,100,210,0.45)',color: '#9060c8' },
-  9:  { emoji: '🫘', label: 'Soy',       name: 'Soybeans',                        bg: 'rgba(90,130,30,0.12)',  border: 'rgba(90,130,30,0.45)',  color: '#60901a' },
-  10: { emoji: '🌻', label: 'Sesame',    name: 'Sesame seeds',                    bg: 'rgba(210,160,20,0.12)', border: 'rgba(210,160,20,0.45)', color: '#c09010' },
-  11: { emoji: '🌿', label: 'Celery',    name: 'Celery',                          bg: 'rgba(30,130,80,0.12)',  border: 'rgba(30,130,80,0.45)',  color: '#208050' },
-  12: { emoji: '🟡', label: 'Mustard',   name: 'Mustard',                         bg: 'rgba(240,190,40,0.12)', border: 'rgba(240,190,40,0.45)', color: '#c09808' },
-  13: { emoji: '🌸', label: 'Lupin',     name: 'Lupin',                           bg: 'rgba(210,100,200,0.12)',border: 'rgba(210,100,200,0.45)',color: '#c060b8' },
-  14: { emoji: '⚗️', label: 'SO₂',      name: 'Sulphur dioxide & sulphites',     bg: 'rgba(120,120,120,0.12)',border: 'rgba(120,120,120,0.45)',color: '#909090' },
+  1:  { emoji: '🌾', label: 'Gluten',    name: 'Cereals containing gluten',       bg: 'var(--allergen-1-bg)',  border: 'var(--allergen-1-border)',  color: 'var(--allergen-1-fg)'  },
+  2:  { emoji: '🌰', label: 'Nuts',      name: 'Tree nuts',                       bg: 'var(--allergen-2-bg)',  border: 'var(--allergen-2-border)',  color: 'var(--allergen-2-fg)'  },
+  3:  { emoji: '🥜', label: 'Peanuts',   name: 'Peanuts',                         bg: 'var(--allergen-3-bg)',  border: 'var(--allergen-3-border)',  color: 'var(--allergen-3-fg)'  },
+  4:  { emoji: '🥚', label: 'Eggs',      name: 'Eggs',                            bg: 'var(--allergen-4-bg)',  border: 'var(--allergen-4-border)',  color: 'var(--allergen-4-fg)'  },
+  5:  { emoji: '🥛', label: 'Milk',      name: 'Milk & dairy products',           bg: 'var(--allergen-5-bg)',  border: 'var(--allergen-5-border)',  color: 'var(--allergen-5-fg)'  },
+  6:  { emoji: '🐟', label: 'Fish',      name: 'Fish',                            bg: 'var(--allergen-6-bg)',  border: 'var(--allergen-6-border)',  color: 'var(--allergen-6-fg)'  },
+  7:  { emoji: '🦐', label: 'Crust.',    name: 'Crustaceans',                     bg: 'var(--allergen-7-bg)',  border: 'var(--allergen-7-border)',  color: 'var(--allergen-7-fg)'  },
+  8:  { emoji: '🦑', label: 'Molluscs',  name: 'Molluscs',                        bg: 'var(--allergen-8-bg)',  border: 'var(--allergen-8-border)',  color: 'var(--allergen-8-fg)'  },
+  9:  { emoji: '🫘', label: 'Soy',       name: 'Soybeans',                        bg: 'var(--allergen-9-bg)',  border: 'var(--allergen-9-border)',  color: 'var(--allergen-9-fg)'  },
+  10: { emoji: '🌻', label: 'Sesame',    name: 'Sesame seeds',                    bg: 'var(--allergen-10-bg)', border: 'var(--allergen-10-border)', color: 'var(--allergen-10-fg)' },
+  11: { emoji: '🌿', label: 'Celery',    name: 'Celery',                          bg: 'var(--allergen-11-bg)', border: 'var(--allergen-11-border)', color: 'var(--allergen-11-fg)' },
+  12: { emoji: '🟡', label: 'Mustard',   name: 'Mustard',                         bg: 'var(--allergen-12-bg)', border: 'var(--allergen-12-border)', color: 'var(--allergen-12-fg)' },
+  13: { emoji: '🌸', label: 'Lupin',     name: 'Lupin',                           bg: 'var(--allergen-13-bg)', border: 'var(--allergen-13-border)', color: 'var(--allergen-13-fg)' },
+  14: { emoji: '⚗️', label: 'SO₂',      name: 'Sulphur dioxide & sulphites',     bg: 'var(--allergen-14-bg)', border: 'var(--allergen-14-border)', color: 'var(--allergen-14-fg)' },
 };
 
 interface Props {
