@@ -27,11 +27,11 @@ export default function MenuCard({ item, clickable = false }: Props) {
     <>
       <div
         onClick={() => clickable && setOpen(true)}
-        className={`card-glass flex flex-col overflow-hidden ${clickable ? 'cursor-pointer' : ''}`}
+        className={`card-glass flex flex-col ${clickable ? 'cursor-pointer' : ''}`}
       >
         {/* Thumbnail */}
         {showThumb && (
-          <div className="relative w-full h-44 overflow-hidden flex-shrink-0">
+          <div className="relative w-full h-44 overflow-hidden flex-shrink-0 rounded-t-[1rem]">
             <img
               src={item.image}
               alt={item.nameEn}

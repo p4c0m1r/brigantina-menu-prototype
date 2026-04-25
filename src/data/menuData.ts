@@ -1,6 +1,7 @@
 import type { MenuSection } from '../types/menu';
 
 const IMG = (kw: string) => `https://source.unsplash.com/600x400/?${kw}`;
+const LOCAL = (file: string) => `${import.meta.env.BASE_URL}${file}`;
 const AP = 'Аперитиви · Aperitifs · Аперитивы · Aperitifs';
 const SD = 'Безалкохолни · Soft Drinks · Безалкогольные · Alkoholfrei';
 const BR = 'Бира · Beer · Пиво · Bier';
@@ -25,7 +26,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Свежий салат, помидоры, куриные грудки, ароматный соус, оливки, пармезан',
         descriptionGr: 'Frischer Salat, Tomaten, Hühnerbrust, Croutons, aromatische Sauce, Oliven, Parmesan',
         price: '', badge: 'favorite', allergens: [1, 4, 5],
-        image: IMG('9e7'),
+        image: LOCAL('9e7.jpg'),
       },
       {
         name: 'Шопска Салата',

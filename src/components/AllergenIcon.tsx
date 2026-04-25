@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const allergenInfo: Record<number, { emoji: string; label: string; name: string; bg: string; border: string; color: string }> = {
   1:  { emoji: '🌾', label: 'Gluten',    name: 'Cereals containing gluten',       bg: 'var(--allergen-1-bg)',  border: 'var(--allergen-1-border)',  color: 'var(--allergen-1-fg)'  },
@@ -13,7 +13,7 @@ export const allergenInfo: Record<number, { emoji: string; label: string; name: 
   10: { emoji: '🌻', label: 'Sesame',    name: 'Sesame seeds',                    bg: 'var(--allergen-10-bg)', border: 'var(--allergen-10-border)', color: 'var(--allergen-10-fg)' },
   11: { emoji: '🌿', label: 'Celery',    name: 'Celery',                          bg: 'var(--allergen-11-bg)', border: 'var(--allergen-11-border)', color: 'var(--allergen-11-fg)' },
   12: { emoji: '🟡', label: 'Mustard',   name: 'Mustard',                         bg: 'var(--allergen-12-bg)', border: 'var(--allergen-12-border)', color: 'var(--allergen-12-fg)' },
-  13: { emoji: '🌸', label: 'Lupin',     name: 'Lupin',                           bg: 'var(--allergen-13-bg)', border: 'var(--allergen-13-border)', color: 'var(--allergen-13-fg)' },
+  13: { emoji: '🌸', label: 'Lupin',     name: 'Lupin',                           bg: 'var(--allergen-13-bg)', border: 'var(--allergen-13-border)',  color: 'var(--allergen-13-fg)' },
   14: { emoji: '⚗️', label: 'SO₂',      name: 'Sulphur dioxide & sulphites',     bg: 'var(--allergen-14-bg)', border: 'var(--allergen-14-border)', color: 'var(--allergen-14-fg)' },
 };
 
@@ -23,15 +23,41 @@ interface Props {
 }
 
 export default function AllergenIcon({ number, showLabel = false }: Props) {
-  const [tooltip, setTooltip] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
   const info = allergenInfo[number];
   if (!info) return null;
 
+  const showTooltip = !showLabel && (hovered || pinned);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setPinned((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (!pinned) return;
+    const dismiss = (e: MouseEvent | TouchEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setPinned(false);
+      }
+    };
+    document.addEventListener('click', dismiss);
+    document.addEventListener('touchstart', dismiss);
+    return () => {
+      document.removeEventListener('click', dismiss);
+      document.removeEventListener('touchstart', dismiss);
+    };
+  }, [pinned]);
+
   return (
     <div
+      ref={ref}
       className="relative inline-flex"
-      onMouseEnter={() => setTooltip(true)}
-      onMouseLeave={() => setTooltip(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={handleClick}
     >
       <span
         className="inline-flex items-center gap-0.5 text-[10px] rounded px-1.5 py-0.5 border select-none cursor-help font-semibold leading-none"
@@ -42,7 +68,7 @@ export default function AllergenIcon({ number, showLabel = false }: Props) {
         {showLabel && <span className="ml-0.5 font-medium tracking-wide">{info.label}</span>}
       </span>
 
-      {!showLabel && tooltip && (
+      {showTooltip && (
         <div className="allergen-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 z-30">
           <span className="font-semibold">{number}.</span> {info.name}
           <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent"
