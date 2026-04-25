@@ -1,6 +1,5 @@
 import type { MenuSection } from '../types/menu';
 
-const IMG = (kw: string) => `https://source.unsplash.com/600x400/?${kw}`;
 const LOCAL = (file: string) => `${import.meta.env.BASE_URL}${file}`;
 const AP = 'Аперитиви · Aperitifs · Аперитивы · Aperitifs';
 const SD = 'Безалкохолни · Soft Drinks · Безалкогольные · Alkoholfrei';
@@ -26,7 +25,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Свежий салат, помидоры, куриные грудки, ароматный соус, оливки, пармезан',
         descriptionGr: 'Frischer Salat, Tomaten, Hühnerbrust, Croutons, aromatische Sauce, Oliven, Parmesan',
         price: '', badge: 'favorite', allergens: [1, 4, 5],
-        image: LOCAL('9e7.jpg'),
+        image: LOCAL('caesar.jpg'),
       },
       {
         name: 'Шопска Салата',
@@ -38,7 +37,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Помидоры, огурцы, перец, брынза, лук, оливки',
         descriptionGr: 'Tomaten, Salatgurken, Zwiebeln, Schafskäse, Paprikaschoten, Oliven',
         price: '', badge: 'best', allergens: [5],
-        image: IMG('shopska,salad,cheese,tomato'),
+        image: LOCAL('shopska.jpg'),
       },
       {
         name: 'Гръцка Салата',
@@ -50,7 +49,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Помидоры, огурцы, перец, брынза, лук, орегано, оливки',
         descriptionGr: 'Tomaten, Salatgurken, Paprikaschoten, Schafskäse, Zwiebeln, Oregano, Oliven',
         price: '', allergens: [5],
-        image: IMG('greek,salad,feta'),
+        image: LOCAL('greek-salad.jpg'),
       },
       {
         name: 'Овчарска Салата',
@@ -62,7 +61,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Помидоры, огурцы, жареный перец, брынза, грибы, сыр, яйцо, ветчина, лук, оливки',
         descriptionGr: 'Tomaten, Salatgurken, Schinken, Schafskäse, Schnittkäse, Pilze, Oliven, Gekochtes Ei, Zwiebeln, gerösteter Pfeffer',
         price: '', badge: 'favorite', allergens: [4, 5],
-        image: IMG('mixed,salad,egg,cheese'),
+        image: LOCAL('shepherd-salad.jpg'),
       },
       {
         name: 'Зелена Салата с Риба Тон',
@@ -74,7 +73,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Свежий лук, огурцы, оливки, тунец',
         descriptionGr: 'Frische Zwiebeln, Gurken, Oliven, Thunfisch',
         price: '', allergens: [6],
-        image: IMG('tuna,salad,green'),
+        image: LOCAL('tuna-salad.jpg'),
       },
       {
         name: 'Млечна Салата',
@@ -86,7 +85,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Дренированное молоко, свежие огурцы, чеснок, орехи, укроп, оливки',
         descriptionGr: 'Joghurt, Salatgurken, Knoblauch, Dill, Walnüsse, Olivenöl, Oliven',
         price: '', allergens: [2, 5],
-        image: IMG('yogurt,cucumber,dill,salad'),
+        image: LOCAL('yogurt-salad.jpg'),
       },
     ],
   },
@@ -136,7 +135,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Хлеб, помидоры, ветчина, бекон, сыр, зеленый салат, жареный картофель, майонезный соус',
         descriptionGr: 'Brot, Tomaten, Schinken, Speck, Gelber Käse, Grüner Salat, Pommes, Mayonnaise-Sauce',
         price: '', badge: 'best', allergens: [1, 4, 5],
-        image: IMG('club,sandwich,fries'),
+        image: LOCAL('clubsandwich.jpg'),
       },
     ],
   },
@@ -158,7 +157,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'С брынзой / с сыром / с ветчиной',
         descriptionGr: 'Mit Salzlakenkäse / mit Käse / mit Schinken',
         price: '', badge: 'favorite', allergens: [4, 5],
-        image: IMG('omelette,egg,cheese'),
+        image: LOCAL('omelette.jpg'),
       },
       {
         name: 'Рибни Филенца със Сос',
@@ -166,7 +165,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Рыбное Филе с Соусом',
         nameGr: 'Fischfilets mit Sauce',
         price: '', allergens: [1, 6],
-        image: IMG('fish,fillets,fried,sauce'),
+        image: LOCAL('fishfingers.jpg'),
       },
       {
         name: 'Пилешки Филенца с Корнфлейкс',
@@ -178,7 +177,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'С чесночным соусом, подается с жареным картофелем',
         descriptionGr: 'Mit Knoblauchsauce, serviert mit Pommes frites',
         price: '', allergens: [1],
-        image: IMG('chicken,strips,crispy,fried'),
+        image: LOCAL('chicken-strips.jpg'),
       },
       {
         name: 'Кашкавалени Пръчици с Чеснов Сос',
@@ -186,7 +185,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Палочки из Желтого Сыра с Чесночным Соусом',
         nameGr: 'Käsestangen mit Knoblauchsauce',
         price: '', allergens: [1, 5],
-        image: IMG('cheese,sticks,fried,sauce'),
+        image: LOCAL('cheese-sticks.jpg'),
       },
     ],
   },
@@ -208,7 +207,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Свиная Отбивная',
         nameGr: 'Schweinesteak',
         price: '', badge: 'favorite',
-        image: IMG('pork,steak,grill,fries'),
+        image: LOCAL('pork-steak.jpg'),
       },
       {
         name: 'Пилешко Шишче – 2бр.',
@@ -216,7 +215,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Куриный Шашлык – 2шт.',
         nameGr: 'Hühnchenspieße – x2',
         price: '',
-        image: IMG('chicken,skewer,grilled'),
+        image: LOCAL('chicken-skewer.jpg'),
       },
       {
         name: 'Свинско Шишче – 2бр.',
@@ -224,7 +223,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Свиной Шашлык – 2шт.',
         nameGr: 'Schweinefleischspiess – x2',
         price: '',
-        image: IMG('pork,skewer,bbq,grilled'),
+        image: LOCAL('pork-skewer.jpg'),
       },
       {
         name: 'Кюфте или Кебапче – 3бр.',
@@ -232,7 +231,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Котлета / Люля Кебаб – 3шт.',
         nameGr: 'Frikadelle / Chevapchichi – x3',
         price: '', badge: 'favorite',
-        image: IMG('meatball,kebab,grilled,fries'),
+        image: LOCAL('meatballs.jpg'),
       },
     ],
   },
@@ -254,7 +253,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Куриное филе или ножка',
         descriptionGr: 'Hühnchenfilet oder Hühnerbein',
         price: '',
-        image: IMG('chicken,steak,grilled,fries'),
+        image: LOCAL('chicken-steak.jpg'),
       },
       {
         name: 'Свински Ребърца',
@@ -262,7 +261,7 @@ export const menuSections: MenuSection[] = [
         nameRu: 'Свиные Ребрышки',
         nameGr: 'Schweinerippchen',
         price: '', badge: 'chef',
-        image: IMG('spare,ribs,bbq,grilled'),
+        image: LOCAL('spare-ribs.jpg'),
       },
       {
         name: 'Шницел по Виенски',
@@ -274,7 +273,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'С помидорами, огурцами, жареным картофелем',
         descriptionGr: 'Mit Tomaten, Salatgurken, Pommes frites',
         price: '', badge: 'best', allergens: [1, 4],
-        image: IMG('wiener,schnitzel,breaded'),
+        image: LOCAL('schnitzel.jpg'),
       },
     ],
   },
@@ -296,7 +295,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'С фаршем и пармезаном',
         descriptionGr: 'Mit Hackfleisch und Parmesan',
         price: '', badge: 'favorite', allergens: [1, 5],
-        image: IMG('spaghetti,bolognese,pasta'),
+        image: LOCAL('bolognese.jpg'),
       },
       {
         name: 'Спагети Карбонара',
@@ -308,7 +307,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Грибы, бекон, сливки, пармезан, чеснок',
         descriptionGr: 'Mit Pilzen, Speck, Sahne, Parmesan, Knoblauch',
         price: '', allergens: [1, 4, 5],
-        image: IMG('spaghetti,carbonara,bacon,cream'),
+        image: LOCAL('carbonara.jpg'),
       },
     ],
   },
@@ -330,7 +329,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Моцарелла, сыр, томатный соус, оливки, орегано',
         descriptionGr: 'Mozzarella, Gelber Käse, Tomatensauce, Oliven, Oregano',
         price: '', allergens: [1, 5],
-        image: IMG('margherita,pizza,mozzarella'),
+        image: LOCAL('pizza-margherita.jpg'),
       },
       {
         name: 'Капри',
@@ -342,7 +341,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Моцарелла, томатный соус, ветчина, сыр, плавленный сыр, маринованые огурцы, яйцо, орегано',
         descriptionGr: 'Mozzarella, Tomatensauce, Schinken, Gelber Käse, Schmelzkäse, Gurken, Ei, Oregano',
         price: '', allergens: [1, 4, 5],
-        image: IMG('pizza,ham,egg,cheese'),
+        image: LOCAL('pizza-capri.jpg'),
       },
       {
         name: 'Феличе',
@@ -354,7 +353,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Моцарелла, томатный соус, сыр, плавленный сыр, кукуруза, бекон, варёное яйцо, орегано',
         descriptionGr: 'Mozzarella, Tomatensauce, Gelber Käse, Schmelzkäse, Mais, Speck, Gekochtes Ei, Oregano',
         price: '', allergens: [1, 4, 5],
-        image: IMG('pizza,corn,bacon,cheese'),
+        image: LOCAL('pizza-felice.jpg'),
       },
       {
         name: 'Пеперони',
@@ -366,7 +365,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Сыр, томатный соус, колбаса тип пеперони, орегано',
         descriptionGr: 'Gelber Käse, Tomatensauce, Peperoni-Salami, Oregano',
         price: '', allergens: [1, 5],
-        image: IMG('pepperoni,pizza'),
+        image: LOCAL('pizza-pepperoni.jpg'),
       },
       {
         name: 'Капричоза',
@@ -378,7 +377,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Моцарелла, сыр, томатный соус, ветчина, колбаса чоризо, перец, оливки, орегано',
         descriptionGr: 'Mozzarella, Gelber Käse, Tomatensauce, Schinken, Chorizo-Wurst, Pfeffer, Oliven, Oregano',
         price: '', allergens: [1, 5],
-        image: IMG('capricciosa,pizza,olives,ham'),
+        image: LOCAL('pizza-capricciosa.jpg'),
       },
       {
         name: 'Калцоне',
@@ -390,7 +389,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Сыр, томатный соус, ветчина, копчёный сыр, свежие грибы, перец, чесночный соус, петрушка, орегано',
         descriptionGr: 'Gelber Käse, Tomatensauce, Schinken, Geräucherter Käse, Frische Pilze, Pfeffer, Knoblauchsauce, Petersilie, Oregano',
         price: '', allergens: [1, 5],
-        image: IMG('calzone,folded,pizza'),
+        image: LOCAL('calzone.jpg'),
       },
       {
         name: 'Куатро Формаджи',
@@ -402,7 +401,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Моцарелла, томатный соус, голубой сыр, копчёный сыр, сыр, орегано, базилик',
         descriptionGr: 'Mozzarella, Tomatensauce, Blauschimmelkäse, Geräucherter Käse, Gelber Käse, Oregano, Basilikum',
         price: '', allergens: [1, 5],
-        image: IMG('quattro,formaggi,pizza,cheese'),
+        image: LOCAL('pizza-quattro.jpg'),
       },
       {
         name: 'Веритас',
@@ -414,7 +413,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Томатный соус, копчёная курица, бекон, плавленный сыр, сыр, свежие грибы, орегано, базилик',
         descriptionGr: 'Tomatensauce, Geräuchertes Hähnchen, Speck, Schmelzkäse, Gelber Käse, Pilze, Oregano, Basilikum',
         price: '', badge: 'chef', allergens: [1, 5],
-        image: IMG('chicken,mushroom,pizza,bacon'),
+        image: LOCAL('pizza-veritas.jpg'),
       },
       {
         name: 'Хавай',
@@ -426,7 +425,7 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Томатный соус, сыр, ветчина, ананас, орегано, базилик',
         descriptionGr: 'Tomatensauce, Gelber Käse, Schinken, Ananas, Oregano, Basilikum',
         price: '', badge: 'best', allergens: [1, 5],
-        image: IMG('hawaii,pizza,pineapple,ham'),
+        image: LOCAL('pizza-hawaii.jpg'),
       },
     ],
   },
