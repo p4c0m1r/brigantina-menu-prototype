@@ -331,7 +331,9 @@
     color: #f5ecd8;
     font-size: 0.625rem;
     padding: 0.3rem 0.6rem;
-    white-space: nowrap;
+    max-width: 11rem;
+    white-space: normal;
+    text-align: center;
     box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     pointer-events: none;
     font-family: var(--font-body);

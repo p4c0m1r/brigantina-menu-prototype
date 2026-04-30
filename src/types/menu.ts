@@ -10,6 +10,7 @@ export interface MenuItem {
   descriptionRu?: string;
   descriptionGr?: string;     // DE
   price?: string;
+  weight?: string;
   ml?: string;
   image?: string;
   badge?: 'best' | 'chef' | 'favorite';

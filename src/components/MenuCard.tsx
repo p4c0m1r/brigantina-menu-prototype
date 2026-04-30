@@ -74,13 +74,21 @@ export default function MenuCard({ item, clickable = false }: Props) {
               ))}
             </div>
             <div className="flex items-center gap-2 ml-2">
+              {item.weight && (
+                <span className="text-text-dim text-xs whitespace-nowrap">{item.weight} г.</span>
+              )}
               {item.ml && (
-                <span className="text-text-dim text-xs whitespace-nowrap">{item.ml} ml</span>
+                <span className="text-text-dim text-xs whitespace-nowrap">{item.ml} мл.</span>
               )}
               {item.price && (
-                <span className="font-display text-text-accent font-bold text-sm whitespace-nowrap">
-                  {item.price} лв.
-                </span>
+                <div className="flex flex-col items-end leading-tight">
+                  <span className="font-display text-text-accent font-bold text-sm whitespace-nowrap">
+                    {item.price} лв.
+                  </span>
+                  <span className="text-text-dim text-[10px] whitespace-nowrap">
+                    € {(parseFloat(item.price) / 1.95583).toFixed(2)}
+                  </span>
+                </div>
               )}
             </div>
           </div>
@@ -128,9 +136,14 @@ export default function MenuCard({ item, clickable = false }: Props) {
                     </span>
                   )}
                   {item.price && (
-                    <span className="font-display text-text-accent font-bold text-xl whitespace-nowrap">
-                      {item.price} лв.
-                    </span>
+                    <div className="flex flex-col items-end leading-tight">
+                      <span className="font-display text-text-accent font-bold text-xl whitespace-nowrap">
+                        {item.price} лв.
+                      </span>
+                      <span className="text-text-dim text-xs whitespace-nowrap">
+                        € {(parseFloat(item.price) / 1.95583).toFixed(2)}
+                      </span>
+                    </div>
                   )}
                 </div>
               </div>
@@ -144,7 +157,7 @@ export default function MenuCard({ item, clickable = false }: Props) {
               {item.allergens && item.allergens.length > 0 && (
                 <div className="border-t border-border-subtle pt-3">
                   <p className="text-text-secondary text-[10px] font-semibold uppercase tracking-widest mb-2">
-                    Allergens · Алергени
+                    {{ bg: 'Алергени', en: 'Allergens', ru: 'Аллергены', de: 'Allergene' }[lang]}
                   </p>
                   <div className="flex gap-1.5 flex-wrap">
                     {item.allergens.map((a) => (
