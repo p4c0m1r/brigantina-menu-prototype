@@ -162,13 +162,13 @@ export const menuSections: MenuSection[] = [
         name: 'Спагети Болонезе', nameEn: 'Spaghetti Bolognese', nameRu: 'Спагетти Болоньезе', nameGr: 'Spaghetti Bolognese',
         descriptionBg: 'С кайма и пармезан', description: 'With minced meat and parmesan',
         descriptionRu: 'С фаршем и пармезаном', descriptionGr: 'Mit Hackfleisch und Parmesan',
-        price: '', weight: '360', badge: 'favorite', allergens: [1, 5], image: LOCAL('bolognese.jpg'),
+        price: '14.49', weight: '360', badge: 'favorite', allergens: [1, 5], image: LOCAL('bolognese.jpg'),
       },
       {
         name: 'Спагети Карбонара', nameEn: 'Spaghetti Carbonara', nameRu: 'Спагетти Карбонара', nameGr: 'Spaghetti Carbonara',
         descriptionBg: 'Гъби, бекон, сметана, пармезан, чесън', description: 'With mushrooms, bacon, cream, parmesan, garlic',
         descriptionRu: 'Грибы, бекон, сливки, пармезан, чеснок', descriptionGr: 'Mit Pilzen, Speck, Sahne, Parmesan, Knoblauch',
-        price: '', weight: '360', allergens: [1, 4, 5], image: LOCAL('carbonara.jpg'),
+        price: '14.49', weight: '360', allergens: [1, 4, 5], image: LOCAL('carbonara.jpg'),
       },
     ],
   },
@@ -182,7 +182,7 @@ export const menuSections: MenuSection[] = [
         description: 'Mozzarella, yellow cheese, tomato sauce, olives, oregano',
         descriptionRu: 'Моцарелла, сыр, томатный соус, оливки, орегано',
         descriptionGr: 'Mozzarella, Gelber Käse, Tomatensauce, Oliven, Oregano',
-        price: '', weight: '450', allergens: [1, 5], image: LOCAL('pizza-margherita.jpg'),
+        price: '12.99', weight: '450', allergens: [1, 5], image: LOCAL('pizza-margherita.jpg'),
       },
       {
         name: 'Капри', nameEn: 'Capri', nameRu: 'Капри', nameGr: 'Capri',
@@ -190,7 +190,7 @@ export const menuSections: MenuSection[] = [
         description: 'Mozzarella, tomato sauce, ham, yellow cheese, soft processed cheese, pickles, egg, oregano',
         descriptionRu: 'Моцарелла, томатный соус, ветчина, сыр, плавленный сыр, маринованые огурцы, яйцо, орегано',
         descriptionGr: 'Mozzarella, Tomatensauce, Schinken, Gelber Käse, Schmelzkäse, Gurken, Ei, Oregano',
-        price: '', weight: '480', allergens: [1, 4, 5], image: LOCAL('pizza-capri.jpg'),
+        price: '16.49', weight: '480', allergens: [1, 4, 5], image: LOCAL('pizza-capri.jpg'),
       },
       {
         name: 'Феличе', nameEn: 'Felice', nameRu: 'Фелиция', nameGr: 'Felice',
@@ -198,7 +198,7 @@ export const menuSections: MenuSection[] = [
         description: 'Mozzarella, tomato sauce, yellow cheese, soft processed cheese, corn, bacon, boiled egg, oregano',
         descriptionRu: 'Моцарелла, томатный соус, сыр, плавленный сыр, кукуруза, бекон, варёное яйцо, орегано',
         descriptionGr: 'Mozzarella, Tomatensauce, Gelber Käse, Schmelzkäse, Mais, Speck, Gekochtes Ei, Oregano',
-        price: '', weight: '500', allergens: [1, 4, 5], image: LOCAL('pizza-felice.jpg'),
+        price: '16.49', weight: '500', allergens: [1, 4, 5], image: LOCAL('pizza-felice.jpg'),
       },
       {
         name: 'Пеперони', nameEn: 'Pepperoni', nameRu: 'Пепперони', nameGr: 'Peperoni',
@@ -206,7 +206,7 @@ export const menuSections: MenuSection[] = [
         description: 'Yellow cheese, tomato sauce, pepperoni, oregano',
         descriptionRu: 'Сыр, томатный соус, колбаса тип пеперони, орегано',
         descriptionGr: 'Gelber Käse, Tomatensauce, Peperoni-Salami, Oregano',
-        price: '', weight: '460', allergens: [1, 5], image: LOCAL('pizza-pepperoni.jpg'),
+        price: '15.99', weight: '460', allergens: [1, 5], image: LOCAL('pizza-pepperoni.jpg'),
       },
       {
         name: 'Капричоза', nameEn: 'Capriccioza', nameRu: 'Капричеза', nameGr: 'Capriccioza',
@@ -214,7 +214,7 @@ export const menuSections: MenuSection[] = [
         description: 'Mozzarella, yellow cheese, tomato sauce, ham, chorizo, peppers, olives, oregano',
         descriptionRu: 'Моцарелла, сыр, томатный соус, ветчина, колбаса чоризо, перец, оливки, орегано',
         descriptionGr: 'Mozzarella, Gelber Käse, Tomatensauce, Schinken, Chorizo-Wurst, Pfeffer, Oliven, Oregano',
-        price: '', weight: '490', allergens: [1, 5], image: LOCAL('pizza-capricciosa.jpg'),
+        price: '15.99', weight: '490', allergens: [1, 5], image: LOCAL('pizza-capricciosa.jpg'),
       },
       {
         name: 'Калцоне', nameEn: 'Calzone', nameRu: 'Кальцоне', nameGr: 'Calzone',
@@ -222,7 +222,7 @@ export const menuSections: MenuSection[] = [
         description: 'Yellow cheese, tomato sauce, ham, smoked cheese, fresh mushrooms, peppers, garlic sauce, parsley, oregano',
         descriptionRu: 'Сыр, томатный соус, ветчина, копчёный сыр, свежие грибы, перец, чесночный соус, петрушка, орегано',
         descriptionGr: 'Gelber Käse, Tomatensauce, Schinken, Geräucherter Käse, Frische Pilze, Pfeffer, Knoblauchsauce, Petersilie, Oregano',
-        price: '', weight: '500', allergens: [1, 5], image: LOCAL('calzone.jpg'),
+        price: '16.49', weight: '500', allergens: [1, 5], image: LOCAL('calzone.jpg'),
       },
       {
         name: 'Куатро Формаджи', nameEn: 'Quattro Formaggi', nameRu: 'Кваттро Формаджи', nameGr: 'Quattro Formaggi',
