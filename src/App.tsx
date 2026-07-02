@@ -4,6 +4,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import MenuSection from './components/MenuSection';
+import BackToTop from './components/BackToTop';
 import { menuSections } from './data/menuData';
 
 export default function App() {
@@ -47,6 +48,7 @@ export default function App() {
             <p>Fregata 13-14, Sunny Beach 8240, Bulgaria</p>
             <p className="mt-1">+359 (0) 554 230 10 • www.villabrigantina.com</p>
           </footer>
+          <BackToTop />
         </div>
       </LanguageProvider>
     </ThemeProvider>

@@ -3,6 +3,7 @@ import { useLang } from '../context/LanguageContext';
 import { getSectionTitle } from '../utils/lang';
 import MenuCard from './MenuCard';
 import { getSectionNote } from '../utils/lang';
+import { useInView } from '../utils/useInView';
 
 interface Props {
   section: MenuSectionType;
@@ -18,6 +19,7 @@ function isClickable(sectionId: string, itemNameEn: string): boolean {
 
 export default function MenuSection({ section }: Props) {
   const { lang } = useLang();
+  const { ref, inView } = useInView<HTMLElement>();
 
   // Group drink items by subCategory
   const subCategories = section.id === 'drinks'
@@ -25,7 +27,11 @@ export default function MenuSection({ section }: Props) {
     : [];
 
   return (
-    <section id={section.id} className="scroll-mt-20 py-8 px-4">
+    <section
+      id={section.id}
+      ref={ref}
+      className={`scroll-mt-20 py-8 px-4 section-reveal ${inView ? 'revealed' : ''}`}
+    >
       {/* Section header */}
       <div className="flex items-center gap-4 mb-6">
         <div className="section-divider-line" />

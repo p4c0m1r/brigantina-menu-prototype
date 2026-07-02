@@ -18,6 +18,7 @@ interface Props {
 export default function MenuCard({ item, clickable = false }: Props) {
   const [open, setOpen] = useState(false);
   const [imgFailed, setImgFailed] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
   const { lang } = useLang();
   const displayName = getItemName(item, lang);
   const description = getItemDescription(item, lang);
@@ -31,11 +32,13 @@ export default function MenuCard({ item, clickable = false }: Props) {
       >
         {/* Thumbnail */}
         {showThumb && (
-          <div className="relative w-full h-44 overflow-hidden flex-shrink-0 rounded-t-[1rem]">
+          <div className="relative w-full h-44 overflow-hidden flex-shrink-0 rounded-t-[1rem] bg-surface-glass">
             <img
               src={item.image}
               alt={item.nameEn}
-              className="w-full h-full object-cover"
+              loading="lazy"
+              className={`w-full h-full object-cover img-fade ${imgLoaded ? 'img-fade-loaded' : ''}`}
+              onLoad={() => setImgLoaded(true)}
               onError={() => setImgFailed(true)}
             />
             {item.badge && (
@@ -73,7 +76,7 @@ export default function MenuCard({ item, clickable = false }: Props) {
                 <AllergenIcon key={a} number={a} />
               ))}
             </div>
-            <div className="flex items-center gap-2 ml-2">
+            <div className="flex items-center gap-2.5 ml-2">
               {item.weight && (
                 <span className="text-text-dim text-xs whitespace-nowrap">{item.weight} г.</span>
               )}
@@ -82,7 +85,7 @@ export default function MenuCard({ item, clickable = false }: Props) {
               )}
               {item.price && (
                 <div className="flex flex-col items-end leading-tight">
-                  <span className="font-display text-text-accent font-bold text-sm whitespace-nowrap">
+                  <span className="font-display text-text-accent font-bold text-base whitespace-nowrap">
                     {item.price} лв.
                   </span>
                   <span className="text-text-dim text-[10px] whitespace-nowrap">
@@ -98,14 +101,19 @@ export default function MenuCard({ item, clickable = false }: Props) {
       {/* Detail modal */}
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-modal-backdrop"
           onClick={() => setOpen(false)}
         >
           <div
-            className="card-glass relative max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col"
+            className="card-glass relative max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col animate-modal-panel"
             style={{ borderRadius: '1.25rem', boxShadow: 'var(--shadow-modal)' }}
             onClick={(e) => e.stopPropagation()}
           >
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+              className="modal-close-btn"
+            >✕</button>
             <div className="w-full h-64 bg-surface-modal flex-shrink-0 flex items-center justify-center border-b border-border-accent-20">
               {item.image && !imgFailed ? (
                 <img
@@ -171,7 +179,7 @@ export default function MenuCard({ item, clickable = false }: Props) {
                 onClick={() => setOpen(false)}
                 className="w-full py-2 rounded-lg border border-border-accent-40 text-text-accent text-sm font-semibold hover:bg-fill-accent-5 transition-all mt-1"
               >
-                Close
+                {{ bg: 'Затвори', en: 'Close', ru: 'Закрыть', de: 'Schließen' }[lang]}
               </button>
             </div>
           </div>
