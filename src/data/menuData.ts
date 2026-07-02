@@ -71,10 +71,6 @@ export const menuSections: MenuSection[] = [
         image: LOCAL('tuna-salad.jpg'),
       },
       {
-        name: 'Зелена Салата с Яйце', nameEn: 'Green Salad with Egg', nameRu: 'Зеленый Салат с Яйцом', nameGr: 'Grüner Salat mit Ei',
-        price: '7.00', weight: '300', allergens: [4],
-      },
-      {
         name: 'Млечна Салата', nameEn: 'Yogurt Salad', nameRu: 'Молочный Салат', nameGr: 'Joghurt Salat',
         descriptionBg: 'Цедено мляко, краставици, чесън, орехи, копър, маслини',
         description:   'Yogurt, cucumbers, garlic, dill, walnuts, olive oil, olives',
@@ -83,11 +79,6 @@ export const menuSections: MenuSection[] = [
         price: '7.00', weight: '200', allergens: [2, 5],
         image: LOCAL('yogurt-salad.jpg'),
       },
-      { name: 'Салата Краставици',            nameEn: 'Cucumber Salad',                  nameRu: 'Салат из Огурцов',                nameGr: 'Gurkensalat',                              price: '7.00', weight: '300' },
-      { name: 'Салата Домати',                nameEn: 'Tomato Salad',                    nameRu: 'Салат из Помидоров',              nameGr: 'Tomatensalat',                             price: '7.00', weight: '300' },
-      { name: 'Салата Зеле',                  nameEn: 'Cabbage Salad',                   nameRu: 'Капустный Салат',                 nameGr: 'Krautsalat',                               price: '6.50', weight: '300' },
-      { name: 'Салата Маслини',               nameEn: 'Olive Salad',                     nameRu: 'Салат с Оливками',                nameGr: 'Olivensalat',                              price: '6.50', weight: '250' },
-      { name: 'Салата Печен Пипер с Чесън',   nameEn: 'Roasted Pepper Salad with Garlic', nameRu: 'Салат из Печёного Перца с Чесноком', nameGr: 'Gerösteter Paprikasalat mit Knoblauch', price: '8.00', weight: '300' },
     ],
   },
   {
@@ -124,8 +115,6 @@ export const menuSections: MenuSection[] = [
         price: '5.50', weight: '250', badge: 'favorite', allergens: [4, 5],
         image: LOCAL('omelette.jpg'),
       },
-      { name: 'Омлет Асорти', nameEn: 'Assorted Omelette', nameRu: 'Омлет Ассорти', nameGr: 'Omelette Assorti', price: '6.50', weight: '250', allergens: [4, 5] },
-      { name: 'Омлет Натюр',  nameEn: 'Plain Omelette',    nameRu: 'Омлет Натюр',   nameGr: 'Omelette Natur',   price: '5.00', weight: '200', allergens: [4] },
       {
         name: 'Рибни Филенца със Сос', nameEn: 'Fish Fillets with Sauce', nameRu: 'Рыбное Филе с Соусом', nameGr: 'Fischfilets mit Sauce',
         price: '7.50', weight: '250', allergens: [1, 6],
@@ -197,7 +186,6 @@ export const menuSections: MenuSection[] = [
         descriptionRu: 'Грибы, бекон, сливки, пармезан, чеснок', descriptionGr: 'Mit Pilzen, Speck, Sahne, Parmesan, Knoblauch',
         price: '9.00', weight: '360', allergens: [1, 4, 5], image: LOCAL('carbonara.jpg'),
       },
-      { name: 'Спагети с Масло', nameEn: 'Spaghetti with Butter', nameRu: 'Спагетти с Маслом', nameGr: 'Spaghetti mit Butter', price: '7.00', weight: '300', allergens: [1, 5] },
     ],
   },
   {
