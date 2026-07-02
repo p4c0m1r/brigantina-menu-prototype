@@ -325,6 +325,12 @@
     border-color: var(--color-border-accent-60);
   }
 
+  /* ── Hero logo ──────────────────────────────────────── */
+  .hero-logo {
+    width: clamp(220px, 60vw, 340px);
+    height: auto;
+  }
+
   /* ── Hero header vignette ───────────────────────────── */
   .hero-vignette {
     position: absolute;
