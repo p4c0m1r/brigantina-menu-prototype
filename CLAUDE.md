@@ -41,14 +41,14 @@ public/                    — optimised food images (JPG), favicon, icons.svg
 ```
 
 ### Menu Sections (IDs)
-`salads` · `toasts` · `alaminute` · `grill` · `chef` · `spaghetti` · `pizza` · `addons` · `sauces` · `focaccia` · `nuts` · `drinks`
+`breakfast` · `salads` · `toasts` · `alaminute` · `grill` · `chef` · `spaghetti` · `pizza` · `addons` · `sauces` · `focaccia` · `nuts` · `desserts` · `drinks` · `wine`
 
 ### Data Shape
-Every `MenuItem` has: `name/nameEn/nameRu/nameGr`, optional `description*`, `price` (string, BGN), `weight` (grams) or `ml`, optional `image`, optional `badge` (`best`|`chef`|`favorite`), optional `allergens` (number array), optional `subCategory`.
+Every `MenuItem` has: `name/nameEn/nameRu/nameGr`, optional `description*`, `price` (string, **EUR**), `weight` (grams) or `ml`, optional `image`, optional `badge` (`best`|`chef`|`favorite`), optional `allergens` (number array), optional `subCategory`. Sections whose items carry `subCategory` (drinks, wine) render grouped under subcategory headings.
 
 ### UX Details Worth Knowing
 - Mobile nav is a horizontally scrollable chip row; the active chip auto-centers as scroll-spy updates.
-- Prices display in BGN with an EUR conversion (fixed rate 1.95583) underneath.
+- Prices are stored and displayed in EUR (€ primary), with the лв equivalent (fixed rate 1.95583) underneath. Source of truth for prices is the owner's POS export.
 - All motion (section reveal, modal entrance, image fade-in) is guarded by `prefers-reduced-motion`.
 - Styling lives in `src/index.css`: semantic tokens in `@theme` (with `[data-theme="light"]` overrides), component classes in `@layer components`, animations in `@layer utilities`.
 
@@ -71,4 +71,4 @@ Build output goes to `dist/`. GitHub Actions deploys the `dist/` folder to the `
 - The multi-language system must extend to all new UI
 - `menuData.ts` remains the single source of truth for menu items; do not duplicate data
 - Do not add a CMS or database for menu items — the owner edits `menuData.ts` directly
-- Prices are strings in `menuData.ts` — convert to numbers only at the point of calculation
+- Prices are EUR strings in `menuData.ts` — convert to numbers only at the point of calculation (лв shown via × 1.95583)

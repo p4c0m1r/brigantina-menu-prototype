@@ -86,10 +86,10 @@ export default function MenuCard({ item, clickable = false }: Props) {
               {item.price && (
                 <div className="flex flex-col items-end leading-tight">
                   <span className="font-display text-text-accent font-bold text-base whitespace-nowrap">
-                    {item.price} лв.
+                    € {item.price}
                   </span>
                   <span className="text-text-dim text-[10px] whitespace-nowrap">
-                    € {(parseFloat(item.price) / 1.95583).toFixed(2)}
+                    {(parseFloat(item.price) * 1.95583).toFixed(2)} лв.
                   </span>
                 </div>
               )}
@@ -146,10 +146,10 @@ export default function MenuCard({ item, clickable = false }: Props) {
                   {item.price && (
                     <div className="flex flex-col items-end leading-tight">
                       <span className="font-display text-text-accent font-bold text-xl whitespace-nowrap">
-                        {item.price} лв.
+                        € {item.price}
                       </span>
                       <span className="text-text-dim text-xs whitespace-nowrap">
-                        € {(parseFloat(item.price) / 1.95583).toFixed(2)}
+                        {(parseFloat(item.price) * 1.95583).toFixed(2)} лв.
                       </span>
                     </div>
                   )}

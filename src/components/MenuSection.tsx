@@ -9,7 +9,7 @@ interface Props {
   section: MenuSectionType;
 }
 
-const NON_CLICKABLE = new Set(['drinks', 'addons', 'sauces', 'focaccia', 'nuts']);
+const NON_CLICKABLE = new Set(['drinks', 'addons', 'sauces', 'focaccia', 'nuts', 'wine', 'breakfast', 'desserts']);
 
 function isClickable(sectionId: string, itemNameEn: string): boolean {
   if (NON_CLICKABLE.has(sectionId)) return false;
@@ -21,8 +21,9 @@ export default function MenuSection({ section }: Props) {
   const { lang } = useLang();
   const { ref, inView } = useInView<HTMLElement>();
 
-  // Group drink items by subCategory
-  const subCategories = section.id === 'drinks'
+  // Group items by subCategory (drinks, wine)
+  const hasSubCategories = section.items.some((i) => i.subCategory);
+  const subCategories = hasSubCategories
     ? [...new Set(section.items.map((i) => i.subCategory).filter(Boolean))] as string[]
     : [];
 
@@ -53,8 +54,8 @@ export default function MenuSection({ section }: Props) {
         </p>
       )}
 
-      {/* Drinks: grouped by subcategory */}
-      {section.id === 'drinks' ? (
+      {/* Drinks & wine: grouped by subcategory */}
+      {hasSubCategories ? (
         <div className="flex flex-col gap-8">
           {subCategories.map((sub) => (
             <div key={sub}>
@@ -63,7 +64,7 @@ export default function MenuSection({ section }: Props) {
                 {section.items
                   .filter((i) => i.subCategory === sub)
                   .map((item) => (
-                    <MenuCard key={item.name} item={item} clickable={false} />
+                    <MenuCard key={`${item.name}-${item.ml ?? ''}`} item={item} clickable={false} />
                   ))}
               </div>
             </div>
@@ -73,7 +74,7 @@ export default function MenuSection({ section }: Props) {
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4${section.id === 'toasts' ? ' lg:items-start' : ''}`}>
           {section.items.map((item) => (
             <MenuCard
-              key={item.name}
+              key={`${item.name}-${item.ml ?? item.weight ?? ''}`}
               item={item}
               clickable={isClickable(section.id, item.nameEn)}
             />
