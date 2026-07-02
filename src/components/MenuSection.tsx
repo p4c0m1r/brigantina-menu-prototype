@@ -9,7 +9,7 @@ interface Props {
   section: MenuSectionType;
 }
 
-const NON_CLICKABLE = new Set(['drinks', 'addons', 'sauces', 'focaccia', 'nuts', 'wine', 'breakfast', 'desserts']);
+const NON_CLICKABLE = new Set(['drinks', 'addons', 'sauces', 'focaccia', 'nuts', 'wine', 'desserts']);
 
 function isClickable(sectionId: string, itemNameEn: string): boolean {
   if (NON_CLICKABLE.has(sectionId)) return false;

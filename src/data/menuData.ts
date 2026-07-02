@@ -11,17 +11,6 @@ const WD = 'Червено Вино · Red Wine · Красное Вино · Ro
 
 export const menuSections: MenuSection[] = [
   {
-    id: 'breakfast',
-    title: 'Закуски', titleEn: 'Breakfast', titleRu: 'Завтраки', titleGr: 'Frühstück', emoji: '🍳',
-    items: [
-      { name: 'Закуска 1 – Първи Вид',          nameEn: 'Breakfast No. 1',                     nameRu: 'Завтрак №1',                        nameGr: 'Frühstück Nr. 1',                          price: '9.00' },
-      { name: 'Закуска 2 – Втори Вид',          nameEn: 'Breakfast No. 2',                     nameRu: 'Завтрак №2',                        nameGr: 'Frühstück Nr. 2',                          price: '5.00' },
-      { name: 'Закуска 3 – Трети Вид',          nameEn: 'Breakfast No. 3',                     nameRu: 'Завтрак №3',                        nameGr: 'Frühstück Nr. 3',                          price: '5.00' },
-      { name: 'Закуска 4 – Четвърти Вид',       nameEn: 'Breakfast No. 4',                     nameRu: 'Завтрак №4',                        nameGr: 'Frühstück Nr. 4',                          price: '9.00' },
-      { name: 'Закуска 5 – Английска Закуска',  nameEn: 'Breakfast No. 5 – English Breakfast', nameRu: 'Завтрак №5 – Английский завтрак',   nameGr: 'Frühstück Nr. 5 – Englisches Frühstück',   price: '5.00' },
-    ],
-  },
-  {
     id: 'salads',
     title: 'Салати', titleEn: 'Salads', titleRu: 'Салаты', titleGr: 'Salate', emoji: '🥗',
     items: [
@@ -300,7 +289,6 @@ export const menuSections: MenuSection[] = [
       { name: 'Люта Чушка',                 nameEn: 'Hot Pepper',              nameRu: 'Острый перец',          nameGr: 'Scharfe Paprika',         price: '1.00' },
       { name: 'Пържени Картофи',            nameEn: 'French Fries',            nameRu: 'Жареный картофель',     nameGr: 'Pommes frites',           price: '3.40', weight: '250' },
       { name: 'Пържени Картофи със Сирене', nameEn: 'French Fries with Cheese', nameRu: 'Жареный картофель с сыром', nameGr: 'Pommes frites mit Käse', price: '4.50', weight: '300', allergens: [5] },
-      { name: 'Кутия за Вкъщи',             nameEn: 'Takeaway Box',            nameRu: 'Коробка на вынос',      nameGr: 'Box zum Mitnehmen',       price: '0.39' },
     ],
   },
   {
@@ -313,7 +301,6 @@ export const menuSections: MenuSection[] = [
       { name: 'Майонеза',            nameEn: 'Mayonnaise',      nameRu: 'Майонез',                   nameGr: 'Mayonnaise',       price: '0.80', weight: '50', allergens: [4] },
       { name: 'Горчица',             nameEn: 'Mustard',         nameRu: 'Горчица',                   nameGr: 'Senf',             price: '0.80', weight: '50', allergens: [12] },
       { name: 'Лютеница',            nameEn: 'Lyutenitsa',      nameRu: 'Лютеница',                  nameGr: 'Lyutenitsa',       price: '0.80', weight: '50' },
-      { name: 'Малка Кутия за Сос',  nameEn: 'Small Sauce Box', nameRu: 'Маленькая коробочка для соуса', nameGr: 'Kleine Saucenbox', price: '0.20' },
     ],
   },
   {

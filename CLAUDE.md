@@ -41,7 +41,7 @@ public/                    — optimised food images (JPG), favicon, icons.svg
 ```
 
 ### Menu Sections (IDs)
-`breakfast` · `salads` · `toasts` · `alaminute` · `grill` · `chef` · `spaghetti` · `pizza` · `addons` · `sauces` · `focaccia` · `nuts` · `desserts` · `drinks` · `wine`
+`salads` · `toasts` · `alaminute` · `grill` · `chef` · `spaghetti` · `pizza` · `addons` · `sauces` · `focaccia` · `nuts` · `desserts` · `drinks` · `wine`
 
 ### Data Shape
 Every `MenuItem` has: `name/nameEn/nameRu/nameGr`, optional `description*`, `price` (string, **EUR**), `weight` (grams) or `ml`, optional `image`, optional `badge` (`best`|`chef`|`favorite`), optional `allergens` (number array), optional `subCategory`. Sections whose items carry `subCategory` (drinks, wine) render grouped under subcategory headings.
